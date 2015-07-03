@@ -1,0 +1,22 @@
+[Unit]
+Description=Backup  
+After=docker.service  
+Requires=docker.service
+
+[Service]
+User=core  
+TimeoutStartSec=5  
+ExecStart=/bin/bash -c  ' \  
+  /usr/bin/docker run \
+    --volumes-from ghost-override \
+    --name=backup-ghost \
+    --rm \
+    --privileged  \
+    --entrypoint "/bin/bash" \
+    76f3b0ed01e3 \
+	file:///var/lib/data
+
+ExecStop=/usr/bin/docker stop backup-ghost
+
+[Install]
+WantedBy=multi-user.target  
