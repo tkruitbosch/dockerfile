@@ -8,7 +8,7 @@ User=core
 TimeoutStartSec=5
 ExecStart=/bin/bash -c  ' \
   /usr/bin/docker run \
-    --volumes-from ghost-override \
+    -v /var/lib/backup:/tmp/backup-test \
     --name=backup-ghost \
     --rm \
     --privileged  \
