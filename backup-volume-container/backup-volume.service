@@ -12,7 +12,6 @@ ExecStart=/bin/bash -c  ' \
     --name=backup-ghost \
     --rm \
     --privileged  \
-    --entrypoint "/bin/bash" \
     tkruitbosch/backup-volume \
     file:///var/lib/data'
 
