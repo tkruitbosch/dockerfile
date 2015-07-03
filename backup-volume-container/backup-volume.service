@@ -14,7 +14,7 @@ ExecStart=/bin/bash -c  ' \
     --privileged  \
     --entrypoint "/bin/bash" \
     76f3b0ed01e3 \
-	file:///var/lib/data
+    file:///var/lib/data
 
 ExecStop=/usr/bin/docker stop backup-ghost
 
