@@ -1,12 +1,12 @@
 [Unit]
-Description=Backup  
-After=docker.service  
+Description=Backup
+After=docker.service
 Requires=docker.service
 
 [Service]
-User=core  
-TimeoutStartSec=5  
-ExecStart=/bin/bash -c  ' \  
+User=core
+TimeoutStartSec=5
+ExecStart=/bin/bash -c  ' \
   /usr/bin/docker run \
     --volumes-from ghost-override \
     --name=backup-ghost \
