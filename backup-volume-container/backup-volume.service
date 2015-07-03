@@ -14,7 +14,7 @@ ExecStart=/bin/bash -c  ' \
     --privileged  \
     --entrypoint "/bin/bash" \
     tkruitbosch/backup-volume \
-    file:///var/lib/data
+    file:///var/lib/data'
 
 ExecStop=/usr/bin/docker stop backup-ghost
 
