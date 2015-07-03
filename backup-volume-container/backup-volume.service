@@ -8,7 +8,7 @@ User=core
 TimeoutStartSec=5
 ExecStart=/bin/bash -c  ' \
   /usr/bin/docker run \
-    -v /var/lib/backup:/tmp/backup-test \
+    -v /tmp/backup-test:/var/lib/backup \
     --name=backup-ghost \
     --rm \
     --privileged  \
